@@ -1,0 +1,57 @@
+@charset "ISO-8859-1";
+
+div.infocard{
+	margin: auto; 
+	margin-top: 100px; 
+	width: 45vw; 
+	border: 1px solid #2196f3; 
+	border-radius: 20px; 
+	padding: 70px; 
+	background-color: white;
+}
+
+.h1title{
+	margin: -20px 0 20px 0; 
+	text-align: center;
+}
+
+.h4title{
+	margin: 5px 0 40px 0; 
+	text-align: center;
+}
+
+.ptext{
+	margin: 40px 0 0 0;
+}
+
+.ultext{
+	margin: 30px 0 0 0;
+}
+
+.litext{
+	margin: 0 0 20px 0;
+}
+
+.inputinfo{
+	width: 100%; 
+	margin-bottom:20px;
+}
+
+.buttoninfo{
+	margin-top:20px; 
+	width: 100%;
+}
+
+
+.bottomtext{
+	margin:0 auto;
+	text-align: center;
+}
+
+#footer{
+	text-align:center;
+	position:absolute;
+	left:50%;
+	transform:translateX(-50%);
+	bottom:40px;
+}
