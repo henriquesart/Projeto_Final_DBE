@@ -38,9 +38,9 @@ public class DAO<T> {
 		return manager.find(classs, id);
 	}
 
-	public void update(Cadastro setup) {
+	public void update(Cadastro cadastro) {
 		manager.getTransaction().begin();
-		manager.merge(setup);
+		manager.merge(cadastro);
 		manager.flush();
 		manager.getTransaction().commit();
 	}
@@ -55,6 +55,11 @@ public class DAO<T> {
 		
 		Cadastro result = query.getSingleResult();
 		return result != null;
+	}
+	
+	public T delete(Cadastro cadastro) {
+		TypedQuery<Cadastro> query = manager.createQuery("DELETE FROM User WHERE u", Cadastro.class);
+		return null;
 	}
 
 
