@@ -9,53 +9,24 @@ import javax.persistence.criteria.CriteriaQuery;
 import br.com.fiap.model.Cadastro;
 import br.com.fiap.util.JPAUtil;
 
-public class CadastroDAO<T> {
+public class CadastroDAO {
 	
-	private Class<T> classs;
-
-	public CadastroDAO(Class<T> classs) {
-		this.classs = classs;
-	}
-
 	private EntityManager manager = JPAUtil.getEntityManager();
 
-	public void save(T t) {
+	public void save(Cadastro setup) {
 		manager.getTransaction().begin();
-		manager.persist(t);
+		manager.persist(setup);
 		manager.getTransaction().commit();
 		manager.close();
 	}
 
-	public List<T> getAll() {
-		CriteriaQuery<T> query = manager.getCriteriaBuilder().createQuery(classs);
-		query.select(query.from(classs));
-		TypedQuery<T> createQuery = manager.createQuery(query);
-		List<T> resultList = createQuery.getResultList();
+	public List<Cadastro> getAll() {
+		String jpql = "SELECT s FROM Setup s";
+		TypedQuery<Cadastro> query = manager.createQuery(jpql, Cadastro.class);
+		List<Cadastro> resultList = query.getResultList();
 		return resultList;
 	}
 
-	public T findById(Long id) {
-		return manager.find(classs, id);
-	}
-
-	public void update(Cadastro setup) {
-		manager.getTransaction().begin();
-		manager.merge(setup);
-		manager.flush();
-		manager.getTransaction().commit();
-	}
-
-	public boolean exist(Cadastro cadastro) {
-		TypedQuery<Cadastro> query = manager.createQuery("SELECT u from User u WHERE "
-				+ "email= :email AND "
-				+ "password = :password", Cadastro.class);
-		
-		query.setParameter("email", cadastro.getEmail());
-		query.setParameter("password", cadastro.getSenha());
-		
-		Cadastro result = query.getSingleResult();
-		return result != null;
-	}
 
 
 

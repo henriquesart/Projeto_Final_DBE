@@ -13,29 +13,7 @@
 		<h:form>
 			<div class="p-field p-grid infocard">
 
-				<h1 class="h1title">Cadastrar Usuários</h1>
-
-				<p:outputLabel value="Nome:" class="p-col-fixed" />
-
-				<div class="p-col inputinfo">
-					<p:inputText id="name" type="text"
-						value="#{cadastroBean.user.nome}" required="true"
-						class="inputinfo">
-						<f:validateLength maximum="255" minimum="2" />
-						<f:ajax event="blur" render="messages" />
-					</p:inputText>
-				</div>
-
-				<p:outputLabel value="Data de nascimento:" class="p-col-fixed" />
-
-				<div class="p-col inputinfo">
-					<p:inputText id="date" type="date"
-						value="#{cadastroBean.user.data_nasc}" required="true"
-						class="inputinfo">
-						<f:validateLength maximum="255" minimum="8" />
-						<f:ajax event="blur" render="messages" />
-					</p:inputText>
-				</div>
+				<h1 class="h1title">Login de Usuários</h1>
 
 				<p:outputLabel value="Email:" class="p-col-fixed" />
 
@@ -63,7 +41,7 @@
 				</p:messages>
 
 				<div class="p-col buttoninfo">
-					<p:commandButton value="Enviar" action="#{cadastroBean.save}"
+					<p:commandButton value="Entrar" action="#{cadastroBean.login}"
 						class="buttoninfo ui-button-outlined">
 						<f:ajax execute="@form" render="messages cadastros" />
 					</p:commandButton>

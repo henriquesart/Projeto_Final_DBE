@@ -12,14 +12,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.fiap.dao.CadastroDAO;
+import br.com.fiap.dao.DAO;
 import br.com.fiap.model.Cadastro;
 
 @Path("/setups")
 @Produces(MediaType.APPLICATION_JSON)
 public class SetupEndpoint {
 	
-	CadastroDAO<Cadastro> dao = new CadastroDAO<Cadastro>(Cadastro.class);
+	DAO<Cadastro> dao = new DAO<Cadastro>(Cadastro.class);
 	
 	@GET
 	public Response index() {
