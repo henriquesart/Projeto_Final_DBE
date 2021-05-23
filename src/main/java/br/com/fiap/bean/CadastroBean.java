@@ -13,24 +13,24 @@ import br.com.fiap.model.Cadastro;
 @Named
 @RequestScoped
 public class CadastroBean {
-
-	private Cadastro cadastro = new Cadastro();
-
-	public Cadastro getCadastro() {
-		return cadastro;
-	}
-
-	public void setCadastro(Cadastro cadastro) {
-		this.cadastro = cadastro;
-	}
-
+	
+	private Cadastro user = new Cadastro();
+	
 	public void save() {
-		new CadastroDAO().save(this.cadastro);
+		new CadastroDAO<Cadastro>(Cadastro.class).save(this.user);
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Usuário cadastrado com sucesso!"));
 	}
 	
-	public List<Cadastro> getCadastros(){
-		return new CadastroDAO().getAll();
+	public List<Cadastro> getUsers(){
+		return new CadastroDAO<Cadastro>(Cadastro.class).getAll();
+	}
+	
+	public Cadastro getUser() {
+		return user;
+	}
+
+	public void setUser(Cadastro user) {
+		this.user = user;
 	}
 	
 }

@@ -42,7 +42,7 @@
 				<div class="p-col inputinfo">
 					<p:inputText id="email" type="email"
 						value="#{cadastroBean.cadastro.email}" required="true"
-						class="inputinfo">
+						class="inputinfo" validatorMessage="Email invalido">
 						<f:validateLength maximum="255" minimum="5" />
 						<f:ajax event="blur" render="messages" />
 					</p:inputText>
@@ -51,12 +51,11 @@
 				<p:outputLabel value="Senha:" class="p-col-fixed" />
 
 				<div class="p-col inputinfo">
-					<p:inputText id="password" type="password"
-						value="#{cadastroBean.cadastro.senha}" required="true"
-						class="inputinfo">
+					<p:password id="password" value="#{cadastroBean.cadastro.senha}"
+						required="true" class="inputinfo" feedback="true">
 						<f:validateLength maximum="255" minimum="5" />
 						<f:ajax event="blur" render="messages" />
-					</p:inputText>
+					</p:password>
 				</div>
 
 				<p:messages id="messages">
