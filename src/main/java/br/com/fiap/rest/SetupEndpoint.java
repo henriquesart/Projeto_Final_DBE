@@ -68,8 +68,8 @@ public class SetupEndpoint {
 	
 	@DELETE
 	@Path("{id}")
-	public Response destroy(@PathParam("id")Cadastro cadastro){
-		   dao.delete(cadastro);
-		   return Response.status(Response.Status.OK).entity(cadastro).build();
+	public Response destroy(@PathParam("id")Long id){
+		Cadastro cadastro = dao.findById(id);
+		  return Response.status(Response.Status.OK).entity(cadastro).build();
 		}
 }

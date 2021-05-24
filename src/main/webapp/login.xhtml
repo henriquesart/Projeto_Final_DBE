@@ -30,7 +30,7 @@
 
 				<div class="p-col inputinfo">
 					<p:password id="password" value="#{cadastroBean.user.senha}"
-						required="true" class="inputinfo" feedback="true">
+						required="true" class="inputinfo">
 						<f:validateLength maximum="255" minimum="5" />
 						<f:ajax event="blur" render="messages" />
 					</p:password>
@@ -43,7 +43,7 @@
 				<div class="p-col buttoninfo">
 					<p:commandButton value="Entrar" action="#{cadastroBean.login}"
 						class="buttoninfo ui-button-outlined">
-						<f:ajax execute="@form" render="messages cadastros" />
+						<f:ajax execute="@form" render="messages cadastro" />
 					</p:commandButton>
 				</div>
 			</div>

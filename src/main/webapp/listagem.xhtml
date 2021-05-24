@@ -9,14 +9,14 @@
 <ui:composition template="template.xhtml">
 	<ui:define name="content">
 
-		<div class="card infocard">
+		<div class="card infocard2">
 			<div class="teste">
 			<h1 class="h1title">Listagem de Usuários</h1>
 			</div>
 
-			<h:form id="form">
-				<p:dataTable id="cadastros" var="cadastro"
-					value="#{cadastroBean.cadastros}" rowKey="#{cadastro.id}"
+			<h:form>
+				<p:dataTable id="cadastro" var="cadastro"
+					value="#{cadastroBean.users}" rowKey="#{cadastro.id}"
 					selectionMode="single">
 
 					<p:column headerText="Nome">
