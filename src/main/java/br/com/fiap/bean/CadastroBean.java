@@ -22,7 +22,7 @@ private Cadastro user = new Cadastro();
 		FacesContext context = FacesContext.getCurrentInstance();
 		if (exist) {
 			context.getExternalContext().getSessionMap().put("user", this.user);
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Login executado", "Login"));
+			context.addMessage(null, new FacesMessage("Login executado"));
 			System.out.println("login realizado");
 			System.out.println(this.user);
 			return "index?faces-redirect=true";			
