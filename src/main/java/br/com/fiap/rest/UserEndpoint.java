@@ -73,3 +73,4 @@ public class UserEndpoint {
 		  return Response.status(Response.Status.OK).entity(cadastro).build();
 		}
 }
+
