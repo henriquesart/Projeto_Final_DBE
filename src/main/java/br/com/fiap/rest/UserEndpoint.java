@@ -18,7 +18,7 @@ import br.com.fiap.model.Cadastro;
 
 @Path("/setups")
 @Produces(MediaType.APPLICATION_JSON)
-public class SetupEndpoint {
+public class UserEndpoint {
 	
 	DAO<Cadastro> dao = new DAO<Cadastro>(Cadastro.class);
 	
