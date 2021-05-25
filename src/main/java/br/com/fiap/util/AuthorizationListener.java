@@ -21,10 +21,10 @@ public class AuthorizationListener implements PhaseListener {
 		
 		Cadastro user = (Cadastro) context.getExternalContext().getSessionMap().get("user");
 		
-		if (user != null) return;
+		//if (user != null) return;
 		
-		NavigationHandler navigationHandler = context.getApplication().getNavigationHandler();
-		navigationHandler.handleNavigation(context, null, "login?faces-redirect=true");
+		//NavigationHandler navigationHandler = context.getApplication().getNavigationHandler();
+		//navigationHandler.handleNavigation(context, null, "login?faces-redirect=true");
 		
 	}
 

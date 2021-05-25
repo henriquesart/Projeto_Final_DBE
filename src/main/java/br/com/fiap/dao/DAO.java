@@ -46,12 +46,12 @@ public class DAO<T> {
 	}
 
 	public boolean exist(Cadastro user) {
-		TypedQuery<Cadastro> query = manager.createQuery("SELECT u from cadastro u WHERE "
+		TypedQuery<Cadastro> query = manager.createQuery("SELECT u FROM cadastro u WHERE "
 				+ "email= :email AND "
 				+ "password = :password", Cadastro.class);
 		
 		query.setParameter("email", user.getEmail());
-		query.setParameter("password", user.getSenha());
+		query.setParameter("senha", user.getSenha());
 		
 		Cadastro result = query.getSingleResult();
 		return result != null;

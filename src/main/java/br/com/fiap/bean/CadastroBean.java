@@ -17,21 +17,8 @@ public class CadastroBean {
 private Cadastro user = new Cadastro();
 	
 	public String login() {
-		boolean exist = new DAO<Cadastro>(Cadastro.class).exist(this.user);
-		
-		FacesContext context = FacesContext.getCurrentInstance();
-		if (exist) {
-			context.getExternalContext().getSessionMap().put("user", this.user);
-			context.addMessage(null, new FacesMessage("Login executado"));
-			System.out.println("login realizado");
-			System.out.println(this.user);
-			return "index?faces-redirect=true";			
-		}
-		
-		context.getExternalContext().getFlash().setKeepMessages(true);
-		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Login inválido", "erro"));
-		return "login?faces-redirect=true";
-					
+		System.out.println("Login realizado");
+		return "index?faces-redirect=true";
 	}
 	
 	public String logout() {
